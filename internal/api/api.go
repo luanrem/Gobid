@@ -1,15 +1,14 @@
 package api
 
 import (
-	"net/http"
+	"github.com/alexedwards/scs/v2"
+	"github.com/luanrem/Gobid/internal/services"
 
 	"github.com/go-chi/chi/v5"
 )
 
 type Api struct {
-	Router *chi.Mux
-}
-
-func (api *Api) handleCreateUser(w http.ResponseWriter, r *http.Request) {
-	// Handle user creation logic here
+	Router      *chi.Mux
+	UserService services.UserService
+	Sessions    *scs.SessionManager
 }
