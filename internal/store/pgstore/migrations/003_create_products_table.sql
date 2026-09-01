@@ -3,7 +3,7 @@
 CREATE TABLE IF NOT EXISTS products (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
 
-  seler_id UUID NOT NULL REFERENCES users (id),
+  seller_id UUID NOT NULL REFERENCES users (id),
 
   product_name TEXT NOT NULL,
   description TEXT NOT NULL,

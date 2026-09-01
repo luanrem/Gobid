@@ -5,14 +5,28 @@
 package pgstore
 
 import (
+	"time"
+
 	"github.com/google/uuid"
 	"github.com/jackc/pgx/v5/pgtype"
 )
 
+type Product struct {
+	ID          uuid.UUID `json:"id"`
+	SellerID    uuid.UUID `json:"seller_id"`
+	ProductName string    `json:"product_name"`
+	Description string    `json:"description"`
+	Baseprice   float64   `json:"baseprice"`
+	AuctionEnd  time.Time `json:"auction_end"`
+	IsSold      bool      `json:"is_sold"`
+	CreatedAt   time.Time `json:"created_at"`
+	UpdatedAt   time.Time `json:"updated_at"`
+}
+
 type Session struct {
-	Token  string             `json:"token"`
-	Data   []byte             `json:"data"`
-	Expiry pgtype.Timestamptz `json:"expiry"`
+	Token  string    `json:"token"`
+	Data   []byte    `json:"data"`
+	Expiry time.Time `json:"expiry"`
 }
 
 type User struct {
