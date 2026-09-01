@@ -1,7 +1,7 @@
-package api
+package main
 
 import "fmt"
 
 func main() {
-	fmt.Println("Starting API server...")
+	fmt.Println("Starting API server now...")
 }

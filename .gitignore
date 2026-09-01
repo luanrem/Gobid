@@ -7,9 +7,11 @@
 !.env.example
 
 # Binários compilados
-/Gobid
-/api
-/terndotenv
+/bin/
+
+# Artefatos do air (live reload)
+/tmp/
+build-errors.log
 *.exe
 *.exe~
 *.dll
