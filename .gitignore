@@ -1,0 +1,46 @@
+# Claude Code
+/.claude
+
+# Variáveis de ambiente (contém credenciais)
+.env
+.env.*
+!.env.example
+
+# Binários compilados
+/Gobid
+/api
+/terndotenv
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Saída de testes e cobertura
+*.test
+*.out
+coverage.*
+
+# Dependências vendorizadas (descomente se não usar vendoring)
+# /vendor/
+
+# Workspace do Go
+go.work
+go.work.sum
+
+# Editores / IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows / Linux
+Thumbs.db
+desktop.ini
+*~
