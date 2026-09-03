@@ -2,6 +2,7 @@ package api
 
 import (
 	"github.com/alexedwards/scs/v2"
+	"github.com/gorilla/websocket"
 	"github.com/luanrem/Gobid/internal/services"
 
 	"github.com/go-chi/chi/v5"
@@ -12,4 +13,5 @@ type Api struct {
 	UserService    services.UserService
 	ProductService services.ProductService
 	Sessions       *scs.SessionManager
+	WsUpgrader     websocket.Upgrader
 }

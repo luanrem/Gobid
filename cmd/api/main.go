@@ -9,6 +9,7 @@ import (
 	"time"
 
 	"github.com/google/uuid"
+	"github.com/gorilla/websocket"
 
 	"github.com/alexedwards/scs/pgxstore"
 	"github.com/alexedwards/scs/v2"
@@ -55,6 +56,11 @@ func main() {
 		UserService:    services.NewUserService(pool),
 		ProductService: services.NewProductService(pool),
 		Sessions:       s,
+		WsUpgrader: websocket.Upgrader{
+			CheckOrigin: func(r *http.Request) bool {
+				return true
+			},
+		},
 	}
 
 	api.BindRoutes()
